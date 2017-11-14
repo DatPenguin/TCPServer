@@ -74,8 +74,10 @@ static void run() {
                             Client dest;
                             int j;
                             for (j = 0; j < actual; j++) {
-                                if (str_equals(clients[j].name, buffer))
+                                if (str_equals(clients[j].name, buffer)) {
                                     dest = clients[j];
+                                    break;
+                                }
                                 else
                                     strncpy(dest.name, "NULL", BUF_SIZE - 1);
                             }
@@ -84,7 +86,9 @@ static void run() {
                                 int c3 = read_client(clients[i].sock, buffer);
                                 if (c3)
                                     send_message_to_client(clients, clients[i], dest, actual, buffer, 0);
-                            }
+                            } else
+                                send_message_to_client(clients, clients[i], clients[i], actual,
+                                                       "No client found with this pseudo.", 1);
                         }
                     } else
                         send_message_to_all_clients(clients, client, actual, buffer, 0);
