@@ -1,4 +1,4 @@
 # TCPServer
-Serveur permettant une connexion de plusieurs clients en TCP, la diffusion de messages en broadcast et vers un client spécifique
-## Projet
+This server allows a multi-client connection by using TCP. Also supports broadcast. It has been coded for The Brickest Dungeon, a school project made in Université de Cergy-Pontoise.
+## Project
 BrickestDungeon ``` https://github.com/sykoure/BrickestDungeon2 ```
